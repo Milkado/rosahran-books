@@ -1,0 +1,60 @@
+{{define "Edit"}}
+
+{{template "_head"}}
+{{template "_menu"}}
+<body>
+    <div class="container">
+        <body>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-5">Edit Book</h1>
+                    <p class="lead">Insert the info to edit:</p>
+                </div>
+            </div>
+            <form method="POST" action="update">
+                <input type="hidden" name="id" value="{{.Id}}">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="nome">Title:</label>
+                            <input type="text" name="title" class="form-control" value="{{.Title}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="blurb">Blurb:</label>
+                            <input type="text" name="blurb" class="form-control" value="{{.Blurb}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" class="form-control" value="{{.Author}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="number" name="price" class="form-control" step="0.01" value="{{.Price}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="quantidade">Sotck:</label>
+                            <input type="number" name="stock" class="form-control" value="{{.Stock}}">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" value="save" class="btn btn-success">Update</button>
+                <a class="btn btn-info" href="/">Go Back</a>
+            </form>
+</body>
+{{end}}
